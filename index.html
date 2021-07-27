@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.6.1/css/ol.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" type="image/png" href="000595-eagle-logo-design-free-logos-03.png">
+    <style>
+      .map {
+        height: 500px;
+        width: 100%;
+      }
+      #location{
+        float: right;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.6.1/build/ol.js"></script>
+    <script src="app.js"></script>
+    <title>Falcon WMS Service</title>
+  </head>
+  <body>
+
+    <div id="map" class="map"></div>
+    <div id="location"><div class="custom-mouse-position">&nbsp;</div></div>
+    <div id="container">
+    <p>Set Map Layer:</p>
+    <div>
+    <input type="radio" id="OpenStreetView" name="language" value="OpenStreetView" onclick="LayerTrigger()" checked>
+    <label for="OpenStreetView">Street View</label><br>
+
+    <input type="radio" id="Stamen" name="language" value="Stamen" onclick="LayerTrigger()">
+    <label for="Stamen">Stamen View</label><br>
+
+    <input type="radio" id="HMAP" name="language" value="HMAP" onclick="LayerTrigger()">
+    <label for="HMAP">Humanetarian View</label><br>
+
+    <input type="radio" id="Mesh" name="language" value="Mesh" onclick="LayerTrigger()">
+    <label for="Mesh">Mesh View</label><br>
+    </div>
+    </div>
+
+  </body>
+</html>

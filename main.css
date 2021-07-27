@@ -1,0 +1,165 @@
+﻿body {
+	margin: 0;
+}
+
+	header h3 {
+		margin: 0;
+		display: inline;
+		color:floralwhite;
+		padding: 5px 5px 0px 5px;
+		font-family:Bahnschrift;
+	}
+
+nav {
+	margin: 0px;
+}
+
+	nav ul {
+		margin: 0px;
+		
+	}
+		nav ul li {
+			display:inline-block;
+			color:floralwhite;
+			
+			
+		}
+
+			nav ul li a{
+				margin: 0px 30px 0px 30px;
+				color:floralwhite;
+
+			}
+			nav ul li a:hover{
+				color: limegreen;
+				text-decoration: underline;
+				background-color: transparent;
+			}
+
+
+
+
+
+.reg {
+	display: inline-block;
+	margin: 0px 0px 0px 200px;
+}
+
+.reg1 {
+	display:inline-block;
+	margin: 0px 0px 0px 540px;
+	
+}
+
+
+.form {
+	display: inline-block;
+	margin: 0px 0px 0px 50px;
+}
+
+.info {
+	text-align: center;
+	font-family: 'Palatino Linotype';
+	font-size: 30px;
+	font-weight: bold;
+	border: 5px dashed burlywood;
+	color: floralwhite;
+}
+.home:visited{
+	color: grey;
+	text-decoration: none;
+	background-color: transparent;
+}
+
+
+img.web1{
+	margin: 0px 0px 0px 20px;
+}
+
+h4.web{
+	text-align: center;
+	margin: 0px 50px 0px 0px;
+
+}
+div.web2{
+	text-align: center;
+	margin: 0px 50px 0px 0px;
+}
+
+img.app1{
+	margin: 0px 0px 0px 60px;
+	
+
+}
+
+h4.app{
+     text-align: center;
+}
+div.app2{
+	text-align: center;
+
+}
+
+img.mobile1{
+	margin: 0px 0px 0px 90px;
+}
+
+h4.mobile{
+	text-align: center;
+	margin: 0px 0px 0px 50px;
+}
+div.mobile2{
+	text-align: center;
+	margin: 0px 0px 0px 50px;
+}
+img.consult1{
+margin: 0px 0px 0px 20px;
+}
+h4.consult{
+text-align: center;
+}
+div.consult2{
+text-align: center;
+}
+img.custom1{
+margin: 0px 0px 0px 60px;
+}
+h4.custom{
+text-align: center;
+}
+div.custom2{
+text-align: center;
+}
+img.desktop1{
+margin: 0px 0px 0px 90px;
+}
+h4.desktop{
+text-align: center;
+}
+div.desktop2{
+text-align: center;
+}
+footer{
+
+
+		margin:50px 0px 0px 0px;
+	padding: 3px 0px 3px 0px;
+}
+
+footer p{
+	color: floralwhite;
+     text-align: center;
+}
+
+footer div{
+	text-align: center; 
+}
+
+
+
+
+
+
+
+
+
