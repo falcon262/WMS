@@ -1,4 +1,4 @@
-window.onload = init;
+window.onload = ZoomGPS;
 
 var map;
 var untiled;
@@ -40,7 +40,7 @@ var pureCoverage = false;
 
                       var options = {
                         enableHighAccuracy: true,
-                        timeout: 5000,
+                        timeout: 10000,
                         maximumAge: 0
                       };
                       
@@ -79,8 +79,8 @@ function init(){
               })
         ],
         view: new ol.View({
-          center: ol.proj.fromLonLat([0, 0]),
-          zoom: 2
+          center: ol.proj.fromLonLat([crd.longitude, crd.latitude]),
+          zoom: 17
         })
       });
 }
@@ -103,7 +103,7 @@ const HumaniterianMap = new ol.layer.Tile({
 
 var worldMap = new ol.layer.Image({
   source: new ol.source.ImageWMS({
-      url:'http://localhost:8080/geoserver/geoSpatial/wms', //url link for geoserver wms
+      url:'http://192.168.43.110:8080/geoserver/geoSpatial/wms', //url link for geoserver wms
       params:{'LAYERS':'geoSpatial:gadm36'},//same name as layer in geoserver
       serverType:'geoserver'
 
@@ -134,7 +134,7 @@ var meshView = document.getElementById("Mesh");
     map.removeLayer(StamenMap);  
 }
   else if(meshView.checked == true){
-    worldMap.setOpacity(1);
+    worldMap.setOpacity(0.4);
     map.addLayer(worldMap);
     map.removeLayer(StamenMap);
     map.removeLayer(HumaniterianMap);  

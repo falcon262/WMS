@@ -1,6 +1,9 @@
 ﻿body {
 	margin: 0;
 }
+header {
+	
+}
 
 	header h3 {
 		margin: 0;
@@ -47,7 +50,7 @@ nav {
 
 .reg1 {
 	display:inline-block;
-	margin: 0px 0px 0px 540px;
+	margin: 0px 0px 0px 50px;
 	
 }
 

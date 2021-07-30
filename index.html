@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.6.1/css/ol.css" type="text/css">
-	<link rel="stylesheet" type="text/css" href="main.css">
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="shortcut icon" type="image/png" href="000595-eagle-logo-design-free-logos-03.png">
     <style>
       .map {
@@ -23,9 +23,114 @@
     <title>Falcon WMS Service</title>
   </head>
   <body>
+    <div class="container-fluid bg-light">
+    <header>
+      <nav class="navbar navbar-expand-sm bg-dark">
+        <ul class="navbar-nav">
+          <h3>Falcon</h3>
+          <img src="000595-eagle-logo-design-free-logos-03.png" width="70" height="40" />
+          <li class="nav-item"><a class="home nav-link" href="#"><i class="fa fa-home" style="font-size:20px"></i>  Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        </ul>
 
+
+        <div class="reg btn-group">
+          <a class="btn btn-outline-success" href="login.html" role="button" style="color: floralwhite;">Sign Up</a>
+          <a class="btn btn-outline-success" data-toggle="modal" data-target="#LogModal" role="button" style="color: floralwhite;">Log-in</a>
+        </div>
+
+        <div id="SignModal" class="modal fade" role="dialog">
+          <div class="modal-dialog modal-lg">
+
+
+            <div class="modal-content">
+              <div class="modal-header bg-dark">
+                <h4 class="modal-title" style="color: floralwhite;">Sign-Up</h4>
+              </div>
+              <div class="modal-body">
+                <form id="Register" action="about.html" method="post">
+                  <div class="form-group">
+                  <label for="firstName">FirstName</label>
+                  <input id="firstName" class="form-control" name="firstName" type="text" placeholder="FirstName" />
+                </div>
+                <div class="form-group">
+                  <label for="lastName">LastName</label>
+                  <input id="lastName" name="lastName" class="form-control" type="text" placeholder="LastName" />
+                </div>
+                  <div class="form-group">
+                  <label for="email">E-mail</label>
+                  <input id="email" name="email" class="form-control" type="email" placeholder="E-mail Address" required/>  
+                  </div>                  
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                  <input id="password" name="password" class="form-control" type="password" placeholder="Password" required />  
+                  </div>
+                  <div class="form-group">
+                    <label for="reenterPassword">Re-Enter Password</label>
+                    <input id="reenterPassword" class="form-control" name="reenterPassword" type="password" placeholder="Re-Enter Password" required />
+                  </div>
+                  <button type="submit" onclick="signUp()" id="signUp" class="btn btn-outline-success">Sign-Up</button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div id="LogModal" class="modal fade" role="dialog">
+          <div class="modal-dialog modal-lg">
+
+
+            <div class="modal-content">
+              <div class="modal-header bg-dark">
+                <h4 class="modal-title" style="color: floralwhite;">Login</h4>
+              </div>
+              <div class="modal-body">
+                <form id="logIn" action="index.html" method="get">
+                    <div class="form-group">
+                  <label for="email">E-mail</label>
+                  <input id="passmail" name="email" class="form-control" type="email" placeholder="E-mail Address" required/> 
+                  </div>                  
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                  <input id="Inpassword" name="password" class="form-control" type="password" placeholder="Password" required />  
+                  </div>
+                  <button type="submit" onclick="signIn()" id="signIn" class="btn btn-outline-success">Login</button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="reg1 btn-group">
+          <button type="button" class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown">Contact Us</button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#"><i class="fa fa-phone" style="font-size:15px"></i>  054-175-0705</a>
+            <a class="dropdown-item" href="#"><i class="fa fa-envelope-o" style="font-size:15px"></i>      thommpson19@gmail.com</a>
+          </div>
+        </div>
+
+        <form class="form form-inline" action="/action_php">
+          <input type="text" class="form-control mr-sm-2" placeholder="Search">
+          <button class="btn btn-secondary" type="submit">Submit</button>
+        </form>
+      </nav>
+    </header>
     <div id="map" class="map"></div>
     <div id="location"><div class="custom-mouse-position">&nbsp;</div></div>
+    <div class="info container-fluid bg-dark">
+      <p>FALCON SERVICES</p>
+      <p>BUILDING YOU BUSINESS ONE STEP AT TIME WITH EXPERT SOLUTIONS</p>
+    </div>
     <div id="container">
     <p>Set Map Layer:</p>
     <div>
@@ -42,6 +147,16 @@
     <label for="Mesh">Mesh View</label><br>
     </div>
     </div>
+    <div class="container-fluid bg-dark">
+  <footer>  
+      <p>FALCONGhana 2018&copy;.&nbsp&nbspAll rights reserved</p>
+       <div class="social">
+    <a href="#" class="btn btn-outline-primary"><i class="fa fa-facebook" style="font-size: 15px"></i></a>
+    <a href="#" class="btn btn-outline-danger"><i class="fa fa-google-plus" style="font-size: 15px"></i></a>
+   </div>
+     </footer>
+     </div>
 
+  </div>
   </body>
 </html>
